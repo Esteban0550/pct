@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pctconstructora - Constructora Profesional</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">pctconstructora</div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-overlay" id="navOverlay"></div>
+            <nav id="mainNav" class="nav-menu">
+                <button class="nav-btn active" data-section="inicio">Inicio</button>
+                <button class="nav-btn" data-section="servicios">Servicios</button>
+                <button class="nav-btn" data-section="nosotros">Nosotros</button>
+                <button class="nav-btn" data-section="ubicacion">Ubicación</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- SECCIÓN INICIO -->
+        <section id="inicio" class="active">
+            <div class="container">
+                <!-- CARRUSEL -->
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slide active">
+                            <img src="images/banner-construccion.webp" alt="Proyectos de Construcción" class="carousel-image">
+                            <div class="carousel-caption">Proyectos de Construcción</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/images (1).jpg" alt="Proyectos Industriales" class="carousel-image">
+                            <div class="carousel-caption">Proyectos Industriales</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/images.jpg" alt="Construcción y Obras" class="carousel-image">
+                            <div class="carousel-caption">Construcción y Obras</div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)">❮</button>
+                    <button class="carousel-btn carousel-next" onclick="moveCarousel(1)">❯</button>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <div class="hero-badge">🏆 Constructora #1 en Calidad</div>
+                    <h1 class="hero-title">pctconstructora</h1>
+                    <p class="hero-subtitle">Construyendo sueños desde 2010</p>
+                    <p class="hero-description">Somos especialistas en proyectos de construcción residencial, comercial e industrial. Con más de 15 años de experiencia, entregamos calidad, seguridad y confianza en cada obra.</p>
+                    
+                    <!-- ESTADÍSTICAS RÁPIDAS -->
+                    <div class="hero-stats">
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-number" data-target="150">0</div>
+                            <div class="hero-stat-label">Proyectos</div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-number" data-target="15">0</div>
+                            <div class="hero-stat-label">Años</div>
+                        </div>
+                        <div class="hero-stat-item">
+                            <div class="hero-stat-number" data-target="98">0</div>
+                            <div class="hero-stat-label">% Satisfacción</div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <button class="cta-button primary" onclick="scrollToSection('servicios')">Conoce Nuestros Servicios</button>
+                        <button class="cta-button secondary" onclick="scrollToSection('nosotros')">Sobre Nosotros</button>
+                    </div>
+                </div>
+                
+                <!-- ELEMENTOS DECORATIVOS FLOTANTES -->
+                <div class="floating-elements">
+                    <div class="floating-icon">🏗️</div>
+                    <div class="floating-icon">🔨</div>
+                    <div class="floating-icon">🏢</div>
+                    <div class="floating-icon">📐</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios">
+            <div class="container">
+                <div class="services-header">
+                    <div class="services-badge">Soluciones Completas</div>
+                    <h2>Nuestros Servicios</h2>
+                    <p class="services-subtitle">Ofrecemos una amplia gama de servicios de construcción para satisfacer todas tus necesidades</p>
+                    <p class="services-instruction">Haz click en una tarjeta para seleccionar el servicio de tu interés</p>
+                </div>
+                
+                <!-- ESTADÍSTICAS RÁPIDAS SERVICIOS -->
+                <div class="services-stats">
+                    <div class="service-stat-item">
+                        <div class="service-stat-icon"></div>
+                        <div class="service-stat-number">6</div>
+                        <div class="service-stat-label">Servicios</div>
+                    </div>
+                    <div class="service-stat-item">
+                        <div class="service-stat-icon"></div>
+                        <div class="service-stat-number">100%</div>
+                        <div class="service-stat-label">Garantía</div>
+                    </div>
+                    <div class="service-stat-item">
+                        <div class="service-stat-icon"></div>
+                        <div class="service-stat-number">24/7</div>
+                        <div class="service-stat-label">Soporte</div>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" onclick="selectService(this)">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"></div>
+                            <div class="service-icon-glow"></div>
+                        </div>
+                        <h3>Construcción Residencial</h3>
+                        <p>Casas y apartamentos con diseño moderno y acabados de primera calidad.</p>
+                        <div class="service-feature">✓ Diseño personalizado</div>
+                    </div>
+                    <div class="service-card" onclick="selectService(this)">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"></div>
+                            <div class="service-icon-glow"></div>
+                        </div>
+                        <h3>Proyectos Comerciales</h3>
+                        <p>Centros comerciales, oficinas y espacios corporativos funcionales.</p>
+                        <div class="service-feature">✓ Espacios funcionales</div>
+                    </div>
+                    <div class="service-card" onclick="selectService(this)">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"></div>
+                            <div class="service-icon-glow"></div>
+                        </div>
+                        <h3>Reformas y Remodelación</h3>
+                        <p>Transformamos espacios existentes con creatividad e innovación.</p>
+                        <div class="service-feature">✓ Transformación total</div>
+                    </div>
+                    <div class="service-card" onclick="selectService(this)">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"></div>
+                            <div class="service-icon-glow"></div>
+                        </div>
+                        <h3>Consultoría Técnica</h3>
+                        <p>Asesoramiento profesional en proyectos y planificación estructural.</p>
+                        <div class="service-feature">✓ Asesoría experta</div>
+                    </div>
+                    <div class="service-card" onclick="selectService(this)">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"></div>
+                            <div class="service-icon-glow"></div>
+                        </div>
+                        <h3>Proyectos Industriales</h3>
+                        <p>Estructuras especializadas para plantas y complejos industriales.</p>
+                        <div class="service-feature">✓ Estructuras especializadas</div>
+                    </div>
+                    <div class="service-card" onclick="selectService(this)">
+                        <div class="service-icon-wrapper">
+                            <div class="service-icon"></div>
+                            <div class="service-icon-glow"></div>
+                        </div>
+                        <h3>Diseño y Planificación</h3>
+                        <p>Diseño integral y planificación detallada de tus proyectos.</p>
+                        <div class="service-feature">✓ Planificación detallada</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN NOSOTROS -->
+        <section id="nosotros">
+            <div class="container">
+                <div class="about-header">
+                    <div class="about-badge">Líderes en Construcción</div>
+                    <h2>Sobre Nosotros</h2>
+                    <p class="about-subtitle">Construyendo el futuro con experiencia, calidad y compromiso</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="about-section-card">
+                            <div class="about-icon"></div>
+                            <h3>Experiencia y Confianza</h3>
+                            <p>pctconstructora es una empresa con más de 15 años en la industria de la construcción. Nos hemos caracterizado por entregar proyectos de calidad, respetando los plazos y presupuestos acordados con nuestros clientes.</p>
+                            <p>Nuestro equipo está conformado por ingenieros, arquitectos y maestros de obra altamente capacitados, comprometidos con la excelencia en cada proyecto.</p>
+                        </div>
+                        
+                        <div class="about-section-card">
+                            <div class="about-icon"></div>
+                            <h3>Nuestra Misión</h3>
+                            <p>Construir proyectos que transformen espacios y mejoren la calidad de vida de las personas, manteniendo altos estándares de seguridad, calidad y profesionalismo.</p>
+                        </div>
+                        
+                        <!-- VALORES -->
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <div class="value-icon"></div>
+                                <div class="value-title">Seguridad</div>
+                                <div class="value-desc">Prioridad #1</div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon"></div>
+                                <div class="value-title">Calidad</div>
+                                <div class="value-desc">Excelencia total</div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon"></div>
+                                <div class="value-title">Compromiso</div>
+                                <div class="value-desc">Con nuestros clientes</div>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon"></div>
+                                <div class="value-title">Eficiencia</div>
+                                <div class="value-desc">Plazos cumplidos</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="about-image-placeholder">
+                            <div class="about-image-icon"></div>
+                            <div class="about-image-glow"></div>
+                        </div>
+                        <div class="about-image-badge">15+ Años de Experiencia</div>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-icon"></div>
+                        <div class="stat-number" data-target="150">0</div>
+                        <div class="stat-label">Proyectos Completados</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"></div>
+                        <div class="stat-number" data-target="1200">0</div>
+                        <div class="stat-label">Clientes Satisfechos</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon"></div>
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">% Satisfacción</div>
+                        <div class="stat-bar">
+                            <div class="stat-bar-fill" style="width: 98%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN UBICACIÓN -->
+        <section id="ubicacion">
+            <div class="container">
+                <h2>Ubicación y Contacto</h2>
+                <div class="location-content">
+                    <div class="map-placeholder">📍</div>
+                    <div class="location-info">
+                        <div class="contact-item">
+                            <h4>📍 Dirección</h4>
+                            <p>Calle Principal 123, Centro Empresarial Torre B, Piso 8<br>Ciudad Principal, CP 28001</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>📞 Teléfono</h4>
+                            <p>+34 911 234 567<br>+34 912 345 678</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>✉️ Correo</h4>
+                            <p>info@buildcraft.com<br>proyectos@buildcraft.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>🕐 Horario</h4>
+                            <p>Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p class="footer-text">&copy; 2025 <span class="footer-highlight">pctconstructora</span> - Todos los derechos reservados. Construimos el futuro.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
